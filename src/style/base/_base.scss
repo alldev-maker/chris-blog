@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Merriweather";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+}
+
+body {
+  background-color: #1f2023;
+}
+
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.container {
+  @include mq("xl") {
+    max-width: 1064px;
+  }
+  @include mq("md", max) {
+    max-width: calc(100% - 40px);
+  }
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .social-link {
+    padding: 0 20px;
+    .social-icon {
+      width: 32px;
+      height: 32px;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}

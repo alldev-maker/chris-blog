@@ -1,0 +1,46 @@
+header {
+  .navbar {
+    padding-top: 69px;
+    padding-bottom: 39px;
+    border-bottom: 1px solid #6d712e;
+
+    @include mq("sm", max) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .logo {
+      font-weight: 900;
+      font-size: 72px;
+      line-height: 91px;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+      @include mq("lg", max) {
+        font-size: 32px;
+        line-height: 38px;
+      }
+    }
+    .nav-link {
+      padding: 8px 20px;
+      background: #6d712e;
+      border-radius: 10px;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 38px;
+      letter-spacing: 0.02em;
+      text-decoration-line: underline;
+      color: #ffffff;
+      @include mq("lg", max) {
+        padding: 4px 10px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+    @include mq("sm", max) {
+      justify-content: center;
+      .nav-link {
+        margin-top: 24px;
+      }
+    }
+  }
+}
