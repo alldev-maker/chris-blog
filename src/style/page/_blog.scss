@@ -1,0 +1,18 @@
+.blog-detail {
+  padding: 60px 0;
+  @include mq(lg, max) {
+    padding: 30px 0;
+  }
+  .title {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 80px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    font-family: "Allerta Stencil";
+    @include mq(lg, max) {
+      font-size: 26px;
+      line-height: 38px;
+    }
+  }
+}

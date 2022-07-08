@@ -1,4 +1,6 @@
-// const prismicConfiguration = require("./prismic-configuration")
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -43,20 +45,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Merriweather\:400,700,900`],
+        fonts: [`Merriweather\:400,700,900`, `Allerta Stencil\:400`],
         display: "swap",
       },
     },
-    // {
-    //   resolve: "gatsby-source-prismic",
-    //   options: {
-    //     repositoryName: prismicConfiguration.prismicRepo,
-    //     accessToken: process.env.PRISMIC_ACCESS_TOKEN,
-    //     linkResolver: require("./src/utils/linkResolver").linkResolver,
-    //     schemas: {
-    //       blog_post: require("./custom_types/blog_post.json"),
-    //     },
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    `@contentful/gatsby-transformer-contentful-richtext`,
   ],
 }
