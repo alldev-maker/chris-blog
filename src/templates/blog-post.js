@@ -9,25 +9,25 @@ import BlogTimeInfo from "../components/common/blog-time-info"
 const BlotPost = ({ data }) => {
   const blogData = data.contentfulBlogPost
   console.log(blogData)
-  const options = {
-    renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: node => {
-        // const { gatsbyImageData } = node.data.target
-        console.log(node)
-        const gatsbyImageData = node.data.target?.gatsbyImageData
-        return (
-          <>
-            {gatsbyImageData && (
-              <GatsbyImage
-                image={getImage(gatsbyImageData)}
-                alt="blog detail img"
-              />
-            )}
-          </>
-        )
-      },
-    },
-  }
+  // const options = {
+  //   renderNode: {
+  //     [BLOCKS.EMBEDDED_ASSET]: node => {
+  //       // const { gatsbyImageData } = node.data.target
+  //       console.log(node)
+  //       const gatsbyImageData = node.data.target?.gatsbyImageData
+  //       return (
+  //         <>
+  //           {gatsbyImageData && (
+  //             <GatsbyImage
+  //               image={getImage(gatsbyImageData)}
+  //               alt="blog detail img"
+  //             />
+  //           )}
+  //         </>
+  //       )
+  //     },
+  //   },
+  // }
 
   return (
     <Layout>
@@ -41,7 +41,7 @@ const BlotPost = ({ data }) => {
             />
           </div>
           <div className="blog-content">
-            {blogData.content?.raw && renderRichText(blogData.content, options)}
+            {blogData.content?.raw && renderRichText(blogData.content)}
           </div>
         </div>
       </section>
