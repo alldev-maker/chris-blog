@@ -1,23 +1,21 @@
 .blog-search {
-  margin: 60px 0;
+  margin: 40px 0;
   @include mq("lg", max) {
-    padding: 30px 0;
+    padding: 20px 0;
   }
   .headline {
     font-weight: 700;
-    font-size: 60px;
-    line-height: 100px;
+    font-size: 2em;
     @include mq("lg", max) {
       font-weight: 900;
-      font-size: 26px;
-      line-height: 32px;
+      font-size: 1.3em;
       margin-bottom: 15px;
     }
   }
   .search-input {
     width: 100%;
-    margin: 60px 0;
-    padding: 11px 11px 11px 70px;
+    margin: 32px 0;
+    padding: 10px 10px 10px 70px;
     border-radius: 10px;
     font-weight: 400;
     font-size: 32px;
@@ -31,7 +29,7 @@
     }
     @include mq("lg", max) {
       border-radius: 5px;
-      margin: 40px 0;
+      margin: 20px 0;
       padding: 10px 10px 10px 44px;
       font-size: 14px;
       line-height: 16px;
@@ -43,49 +41,57 @@
   .category-list {
     display: flex;
     flex-wrap: wrap;
-    button {
-      padding: 20px;
-      margin: 0 15px 25px;
+
+    .view-all {
+      padding: 10px 15px;
+      margin: 0 10px 15px;
+      background: rgba(255, 255, 255, 0.05);
+      text-decoration: underline;
       border-radius: 10px;
       border: none;
       font-weight: 400;
-      font-size: 32px;
-      line-height: 14px;
+      font-size: 18px;
       letter-spacing: 0.02em;
       color: white;
-      @include mq(lg, max) {
-        padding: 4px 10px;
-        font-size: 18px;
-        line-height: 24px;
-        border-radius: 5px;
-        margin: 0 10px 20px;
-      }
     }
-    .category-item {
-      background-color: $green;
-      img {
-        margin-right: 10px;
-        width: 32px;
-        height: 32px;
-        @include mq(lg, max) {
-          width: 16px;
-          height: 16px;
-        }
-      }
-    }
-    .view-all {
-      background: rgba(255, 255, 255, 0.05);
-      text-decoration: underline;
+  }
+}
+
+.category-item {
+  background-color: $green;
+  padding: 7px 10px;
+  margin: 0 10px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: white;
+  @include mq(lg, max) {
+    padding: 4px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin: 0 10px 20px;
+  }
+  img {
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+    @include mq(lg, max) {
+      width: 16px;
+      height: 16px;
     }
   }
 }
 
 .blog-list {
-  padding: 60px 0;
+  padding: 32px 0;
   border-top: 1px solid $green;
   border-bottom: 1px solid $green;
   .blog-item {
-    margin-bottom: 60px;
+    margin-bottom: 25px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -98,49 +104,22 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 15px;
+      margin-bottom: 15px;
       color: #848484;
     }
-    .category {
-      padding: 20px;
-      margin-right: 30px;
-      border-radius: 10px;
-      border: none;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 14px;
-      letter-spacing: 0.02em;
-      color: white;
-      background-color: $green;
-      img {
-        margin-right: 10px;
-        width: 30px;
-        height: 30px;
-        @include mq(lg, max) {
-          width: 15px;
-          height: 15px;
-        }
-      }
-      @include mq(lg, max) {
-        padding: 4px 10px;
-        font-size: 18px;
-        line-height: 24px;
-        border-radius: 5px;
-        margin: 0 10px 20px;
-      }
-    }
+
     @include mq(lg, max) {
       margin-bottom: 40px;
     }
   }
   @include mq(lg, max) {
-    padding: 30px 0;
+    padding: 16px 0;
   }
 }
 
 .date-time {
-  font-size: 24px;
+  font-size: 18px;
   line-height: 22px;
   letter-spacing: 0.02em;
   text-decoration-line: underline;

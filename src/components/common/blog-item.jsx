@@ -17,13 +17,13 @@ const BlogItem = ({ blog }) => {
       <p className="content">{plainTextContent}</p>
       <div className="d-flex flex-wrap">
         {blog.categories.map((item, idx) => (
-          <div className="category" key={idx}>
+          <div className="category-item" key={idx}>
             <img src={item.icon.url} alt={item.name} />
             {item.name}
           </div>
         ))}
       </div>
-      <div className="d-flex justify-content-between mt-3">
+      <div className="d-flex justify-content-between mt-2">
         <BlogTimeInfo date={blog.date} readingTime={blog.readingTime} />
       </div>
     </div>
