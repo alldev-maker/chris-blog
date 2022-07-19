@@ -1,30 +1,34 @@
 import React from "react"
 import { Link } from "gatsby"
-import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer"
-import { Calendar, Clock } from "../../utils/imgImport"
 import BlogTimeInfo from "./blog-time-info"
 
-const BlogItem = ({ blog }) => {
-  const plainTextContent = documentToPlainTextString(
-    JSON.parse(blog.content.raw)
-  )
+const BlogItem = ({ blog, categoryList }) => {
+  const getCategoryData = categoryId => {
+    return categoryList.filter(item => item.prismicId === categoryId)[0].data
+  }
 
   return (
     <div className="blog-item">
-      <Link to={`/blog/${blog.slug}`}>
-        <h2 className="title">{blog.title}</h2>
+      <Link to={blog.url}>
+        <h2 className="title">{blog.data.blog_title}</h2>
       </Link>
-      <p className="content">{plainTextContent}</p>
+      <p className="content">{blog.data.blog_description.text}</p>
       <div className="d-flex flex-wrap">
-        {blog.categories.map((item, idx) => (
+        {blog.data.categories.map((item, idx) => (
           <div className="category-item" key={idx}>
-            <img src={item.icon.url} alt={item.name} />
-            {item.name}
+            <img
+              src={getCategoryData(item.category.id).icon.url}
+              alt={getCategoryData(item.category.id).name}
+            />
+            {getCategoryData(item.category.id).name}
           </div>
         ))}
       </div>
       <div className="d-flex justify-content-between mt-2">
-        <BlogTimeInfo date={blog.date} readingTime={blog.readingTime} />
+        <BlogTimeInfo
+          date={blog.data.published_date}
+          readingTime={blog.data.reading_time}
+        />
       </div>
     </div>
   )

@@ -1,49 +1,29 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { graphql } from "gatsby"
+import { SliceZone } from "@prismicio/react"
+
 import Layout from "../components/layout"
 import BlogTimeInfo from "../components/common/blog-time-info"
+import { components } from "../components/slices"
 
 const BlotPost = ({ data }) => {
-  const blogData = data.contentfulBlogPost
-  console.log(blogData)
-  // const options = {
-  //   renderNode: {
-  //     [BLOCKS.EMBEDDED_ASSET]: node => {
-  //       // const { gatsbyImageData } = node.data.target
-  //       console.log(node)
-  //       const gatsbyImageData = node.data.target?.gatsbyImageData
-  //       return (
-  //         <>
-  //           {gatsbyImageData && (
-  //             <GatsbyImage
-  //               image={getImage(gatsbyImageData)}
-  //               alt="blog detail img"
-  //             />
-  //           )}
-  //         </>
-  //       )
-  //     },
-  //   },
-  // }
+  const blogData = data.prismicBlogPost.data
 
   return (
     <Layout>
-      <section className="container">
-        <div className="blog-detail">
-          <h1 className="title">{blogData.title}</h1>
-          <div className="d-flex justify-content-between my-5">
-            <BlogTimeInfo
-              date={blogData.date}
-              readingTime={blogData.readingTime}
-            />
-          </div>
-          <div className="blog-content">
-            {blogData.content?.raw && renderRichText(blogData.content)}
-          </div>
+      <section className="container blog-detail">
+        <h1 className="title">{blogData.blog_title}</h1>
+        <div className="d-flex justify-content-between my-5">
+          <BlogTimeInfo
+            date={blogData.published_date}
+            readingTime={blogData.reading_time}
+          />
         </div>
+        <div
+          className="rich-text blog-content"
+          dangerouslySetInnerHTML={{ __html: blogData.blog_description.html }}
+        />
+        <SliceZone slices={blogData.body} components={components} />
       </section>
     </Layout>
   )
@@ -52,19 +32,85 @@ const BlotPost = ({ data }) => {
 export default BlotPost
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      slug
-      title
-      readingTime
-      date(formatString: "Do MMM, YYYY")
-      content {
-        raw
-      }
-      categories {
-        name
-        icon {
-          url
+  query BlogPostQuery($id: String) {
+    prismicBlogPost(id: { eq: $id }) {
+      data {
+        blog_title
+        blog_description {
+          html
+        }
+        published_date
+        reading_time
+        body {
+          ... on PrismicSliceType {
+            id
+            slice_label
+            slice_type
+          }
+          ... on PrismicBlogPostDataBodyQuote {
+            id
+            primary {
+              quote {
+                html
+              }
+              quoted_by {
+                html
+              }
+            }
+          }
+          ... on PrismicBlogPostDataBodySubHeading {
+            id
+            primary {
+              sub_title
+            }
+          }
+          ... on PrismicBlogPostDataBodySubContext {
+            id
+            items {
+              blog_sub_context {
+                html
+              }
+            }
+          }
+          ... on PrismicBlogPostDataBodyThoughtBox {
+            id
+            items {
+              tb_content {
+                html
+              }
+            }
+            primary {
+              tb_switch
+              question {
+                html
+              }
+            }
+          }
+          ... on PrismicBlogPostDataBodyVideo {
+            id
+            primary {
+              spotify_videos {
+                html
+              }
+              twitter_posts {
+                html
+              }
+              youtube_videos {
+                html
+              }
+            }
+          }
+          ... on PrismicBlogPostDataBodyCodeSlice {
+            id
+            items {
+              embedded_code {
+                html
+              }
+              code_explanation {
+                html
+              }
+            }
+          }
         }
       }
     }

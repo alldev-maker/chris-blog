@@ -42,9 +42,8 @@ ul {
 .social-icons {
   display: flex;
   align-items: center;
-  justify-content: center;
   .social-link {
-    padding: 0 20px;
+    padding: 0 15px;
     .social-icon {
       width: 32px;
       height: 32px;
@@ -52,5 +51,43 @@ ul {
     &:first-child {
       padding-left: 0;
     }
+  }
+}
+
+.rich-text {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    margin-bottom: 8px;
+  }
+  img {
+    max-width: 100%;
+  }
+  ul {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    list-style: none;
+    li {
+      margin-bottom: 8px;
+      color: white;
+    }
+    li::before {
+      content: "\2022";
+      color: $green;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+    }
+  }
+  a {
+    background-color: $green;
+    text-decoration: underline;
+    color: white;
+  }
+  pre {
+    margin-bottom: 0;
   }
 }

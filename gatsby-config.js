@@ -1,3 +1,5 @@
+const { prismicRepo } = require("./prismic-configuration")
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -50,10 +52,18 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-contentful",
+      resolve: "gatsby-source-prismic",
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        repositoryName: prismicRepo,
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        linkResolver: require("./src/utils/linkResolver").linkResolver,
+        schemas: {
+          blog_post: require("./custom_types/blog_post.json"),
+          about_me: require("./custom_types/about_me.json"),
+          faqs: require("./custom_types/faqs.json"),
+          category: require("./custom_types/category.json"),
+          social_media: require("./custom_types/social_media.json"),
+        },
       },
     },
   ],

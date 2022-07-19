@@ -5,10 +5,13 @@
 @import "base/base", "base/typography";
 
 // Components
-@import "components/buttons";
+@import "components/buttons", "components/accordion";
 
 // Layout
 @import "layout/header", "layout/footer";
 
+//Slices styles
+@import "slices/quote", "slices/sub_heading", "slices/thought_box";
+
 //Page styles
-@import "page/home", "page/blog";
+@import "page/home", "page/blog", "page/about_me";

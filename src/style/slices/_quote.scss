@@ -1,0 +1,19 @@
+.post-quote {
+  .quote-text {
+    p {
+      max-width: 840px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-family: "Allerta Stencil";
+      font-weight: 400;
+      font-size: 32px;
+      text-align: center;
+      border-top: 5px solid $green;
+      border-bottom: 5px solid $green;
+    }
+  }
+}

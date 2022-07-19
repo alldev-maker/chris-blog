@@ -1,7 +1,7 @@
 exports.linkResolver = doc => {
   switch (doc.type) {
-    case "resource": {
-      return `/resource/${doc.uid}`
+    case "blog_post": {
+      return `/blog/${doc.uid}`
     }
 
     default:

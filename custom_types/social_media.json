@@ -1,0 +1,26 @@
+{
+  "Main": {
+    "name": {
+      "type": "Text",
+      "config": {
+        "label": "Name",
+        "placeholder": "Name"
+      }
+    },
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "image"
+      }
+    },
+    "link": {
+      "type": "Link",
+      "config": {
+        "label": "Link",
+        "select": null
+      }
+    }
+  }
+}

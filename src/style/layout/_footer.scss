@@ -6,10 +6,12 @@ footer {
     letter-spacing: 0.02em;
   }
   .social-icons {
+    justify-content: center;
+
     .social-link {
-      padding: 0 30px;
+      padding: 0 20px;
       @include mq("sm", max) {
-        padding: 0 20px;
+        padding: 0 15px;
         .social-icon {
           width: 14px;
           height: 14px;

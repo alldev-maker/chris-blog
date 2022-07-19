@@ -1,0 +1,49 @@
+{
+  "Main": {
+    "job_title": {
+      "type": "Text",
+      "config": {
+        "label": "Job Title",
+        "placeholder": "Job Title"
+      }
+    },
+    "am_body": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "AM Body",
+        "placeholder": "AM Body"
+      }
+    },
+    "faq_list": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "question": {
+            "type": "Text",
+            "config": {
+              "label": "Question",
+              "placeholder": "Question"
+            }
+          },
+          "answer": {
+            "type": "Text",
+            "config": {
+              "label": "Answer",
+              "placeholder": "Answer"
+            }
+          }
+        },
+        "label": "FAQ List"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {},
+        "choices": {}
+      }
+    }
+  }
+}

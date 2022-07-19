@@ -5,6 +5,9 @@ import github from "../images/github-icon.svg"
 
 import calendar from "../images/calendar.svg"
 import clock from "../images/clock.svg"
+import thinkEmoji from "../images/think-emoji.svg"
+
+import chrisImg from "../images/chris.jpg"
 
 export const Linkedin = linkedin
 export const Twitter = twitter
@@ -13,3 +16,6 @@ export const Github = github
 
 export const Calendar = calendar
 export const Clock = clock
+export const ThinkEmoji = thinkEmoji
+
+export const ChrisImg = chrisImg

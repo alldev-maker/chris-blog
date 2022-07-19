@@ -1,0 +1,220 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Slug",
+        "placeholder": "Slug"
+      }
+    },
+    "blog_title": {
+      "type": "Text",
+      "config": {
+        "label": "Blog Title",
+        "placeholder": "Title"
+      }
+    },
+    "blog_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "blog description",
+        "placeholder": "blog description"
+      }
+    },
+    "published_date": {
+      "type": "Date",
+      "config": {
+        "label": "Published Date",
+        "placeholder": "Publish Date"
+      }
+    },
+    "reading_time": {
+      "type": "Number",
+      "config": {
+        "label": "Reading Time"
+      }
+    },
+    "categories": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "category": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["category"],
+              "label": "Category",
+              "placeholder": "Category"
+            }
+          }
+        },
+        "label": "Categories"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": null,
+        "choices": {
+          "thought_box": {
+            "type": "Slice",
+            "fieldset": "Thought Box",
+            "description": "Thought Box to be hidden and shown when clicked",
+            "icon": "chat",
+            "display": "list",
+            "non-repeat": {
+              "question": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Question"
+                }
+              },
+              "tb_switch": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": false,
+                  "label": "TB switch"
+                }
+              }
+            },
+            "repeat": {
+              "tb_content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "TB Content"
+                }
+              }
+            }
+          },
+          "quote": {
+            "type": "Slice",
+            "fieldset": "Quote",
+            "description": "Formatted Quote",
+            "icon": "stop",
+            "display": "list",
+            "non-repeat": {
+              "quote": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "quote",
+                  "placeholder": "quote"
+                }
+              },
+              "quoted_by": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Quoted By"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "code_slice": {
+            "type": "Slice",
+            "fieldset": "Code Slice",
+            "description": "Slice of Code that can be copied",
+            "icon": "notifications_none",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "embedded_code": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "embedded code",
+                  "placeholder": "embedded code"
+                }
+              },
+              "code_explanation": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Code Explanation"
+                }
+              }
+            }
+          },
+          "sub_context": {
+            "type": "Slice",
+            "fieldset": "Sub Context",
+            "description": "Sub Context for Blog Post",
+            "icon": "adb",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "blog_sub_context": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "blog sub context"
+                }
+              }
+            }
+          },
+          "video": {
+            "type": "Slice",
+            "fieldset": "Embeddings",
+            "description": "Embedding for Website",
+            "icon": "subway",
+            "display": "list",
+            "non-repeat": {
+              "youtube_videos": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Youtube Videos"
+                }
+              },
+              "spotify_videos": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Spotify Videos"
+                }
+              },
+              "twitter_posts": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "label": "Twitter Posts"
+                }
+              }
+            },
+            "repeat": {
+              "embedded_links": {
+                "type": "Embed",
+                "config": {
+                  "label": "Embedded Links",
+                  "placeholder": "Embedded Links"
+                }
+              }
+            }
+          },
+          "sub_heading": {
+            "type": "Slice",
+            "fieldset": "Sub Heading",
+            "description": "Sub Heading",
+            "icon": "assignment",
+            "display": "list",
+            "non-repeat": {
+              "sub_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Sub Title",
+                  "placeholder": "Sub Title"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}
