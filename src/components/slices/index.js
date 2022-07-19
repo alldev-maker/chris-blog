@@ -1,5 +1,5 @@
 import { CodeSlice } from "./code-slice"
-import { Quote } from "./Quote"
+import { Quote } from "./quote"
 import { SubContext } from "./sub-context"
 import { SubHeading } from "./sub-heading"
 import { ThoughtBox } from "./thought_box"
