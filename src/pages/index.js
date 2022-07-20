@@ -10,7 +10,17 @@ const IndexPage = ({ data }) => {
   const blogList = data.allPrismicBlogPost.nodes
 
   const [search, setSearch] = useState("")
-  const [view_all, setViewAll] = useState(false)
+  const [filter, setFilter] = useState("")
+
+  const handleSearchChange = e => {
+    setSearch(e.target.value)
+  }
+
+  const filtered = !search
+    ? blogList
+    : blogList.filter(item =>
+        item.data.blog_title.toLowerCase().includes(search.toLowerCase())
+      )
 
   return (
     <Layout>
@@ -29,31 +39,32 @@ const IndexPage = ({ data }) => {
             type="text"
             placeholder="Search"
             value={search}
-            onChange={e => setSearch(e.target.value)}
+            onChange={handleSearchChange}
           />
           <div className="category-list">
-            {view_all
-              ? categoryList.map((item, idx) => (
-                  <button className="category-item" key={idx}>
-                    <img src={item.data.icon.url} alt="category icon" />
-                    {item.data.name}
-                  </button>
-                ))
-              : categoryList.slice(0, 5).map((item, idx) => (
-                  <button className="category-item" key={idx}>
-                    <img src={item.data.icon.url} alt="category icon" />
-                    {item.data.name}
-                  </button>
-                ))}
-            <button className="view-all" onClick={() => setViewAll(!view_all)}>
-              {view_all ? "view less" : "view all"}
+            {categoryList.map((item, idx) => (
+              <button
+                onClick={() => setFilter(item.prismicId)}
+                className="category-item"
+                key={idx}
+              >
+                <img src={item.data.icon.url} alt="category icon" />
+                {item.data.name}
+              </button>
+            ))}
+            <button className="view-all" onClick={() => setFilter("")}>
+              view all
             </button>
           </div>
         </div>
         <div className="blog-list">
-          {blogList.map((item, idx) => (
-            <BlogItem categoryList={categoryList} blog={item} key={idx} />
-          ))}
+          {filtered.map((item, idx) => {
+            return filter === "" ? (
+              <BlogItem categoryList={categoryList} blog={item} key={idx} />
+            ) : item.data.categories.find(cat => cat.category.id === filter) ? (
+              <BlogItem categoryList={categoryList} blog={item} key={idx} />
+            ) : null
+          })}
         </div>
       </section>
     </Layout>
