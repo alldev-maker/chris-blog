@@ -1,43 +1,126 @@
 header {
-  .navbar {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #6d712e;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @include mq(sm, max) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .logo {
+    display: block;
+    max-width: 243px;
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 60px;
+    color: #ffffff;
+    border-bottom: 4px dashed #6d712e;
     @include mq("sm", max) {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      max-width: 213px;
+      font-size: 40px;
     }
-    .logo {
-      font-weight: 900;
-      font-size: 45px;
-      letter-spacing: 0.02em;
-      color: #ffffff;
-      @include mq("lg", max) {
-        font-size: 30px;
-        line-height: 38px;
+  }
+  .navbar {
+    flex-wrap: nowrap;
+    padding-top: 0;
+    padding-bottom: 0;
+    .nav-item {
+      flex-shrink: 0;
+      @include mq("lg") {
       }
     }
     .nav-link {
-      padding: 5px 10px;
-      background: #6d712e;
-      border-radius: 10px;
-      font-weight: 400;
-      font-size: 24px;
-      letter-spacing: 0.02em;
-      text-decoration-line: underline;
-      color: #ffffff;
+      padding: 24px 12px;
+      color: white;
+      font-size: 18px;
+      line-height: 28px;
+
       @include mq("lg", max) {
-        padding: 4px 8px;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 16px;
       }
     }
-    @include mq("sm", max) {
-      justify-content: center;
-      .nav-link {
-        margin-top: 24px;
+    &-nav {
+      flex-direction: row;
+      align-items: center;
+      margin-left: auto;
+      @include mq("md", max) {
+        display: none;
+        &.active {
+          display: flex;
+          position: absolute;
+          top: 79px;
+          left: 0px;
+          width: 100vw;
+          height: calc(100vh - 79px);
+          padding-top: 40px;
+          padding-bottom: 32px;
+          margin-left: -32px;
+          background: #1f2023;
+          flex-direction: column;
+          z-index: 99;
+          overflow: auto;
+          touch-action: none;
+          overflow-y: hidden;
+          .nav-item {
+            width: calc(100% - 32px);
+            .nav-link {
+              font-weight: 300;
+              font-size: 24px;
+              line-height: 36px;
+              padding: 0 0 24px;
+            }
+          }
+        }
       }
+    }
+
+    @include mq("md") {
+      .hamburger {
+        display: none;
+      }
+    }
+  }
+}
+
+.hamburger {
+  position: relative;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 101;
+
+  span {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 1.78px;
+    margin-bottom: 5.33px;
+    border-radius: 12px;
+    background: white;
+    z-index: 1;
+    transform-origin: 0px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    &:first-child {
+      transform-origin: 0% 0%;
+    }
+    &:nth-last-child(2) {
+      transform-origin: 0% 100%;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.active span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-7.5px, -15px);
+    width: 24px;
+    &:first-child {
+      opacity: 0;
+      transform: rotate(0deg) scale(0, 0);
+    }
+    &:nth-last-child(2) {
+      transform: rotate(-45deg) translate(-2.5px, 9px);
     }
   }
 }

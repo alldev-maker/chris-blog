@@ -7,16 +7,17 @@ export const ThoughtBox = ({ slice }) => {
   return (
     <div className="thought-box">
       <div className="d-flex align-items-center">
-        <div
-          className="tb-question"
-          dangerouslySetInnerHTML={{ __html: slice.primary.question.html }}
-        />
         <button className="tb-show" onClick={() => showThought(!show)}>
-          any doubt? <img src={ThinkEmoji} alt="think emoji" />
+          <div
+            className="tb-question"
+            dangerouslySetInnerHTML={{ __html: slice.primary.question.html }}
+          />
+          &nbsp;&nbsp;
+          <img src={ThinkEmoji} alt="think emoji" />
         </button>
       </div>
       {show && (
-        <div className="mt-4">
+        <div className="tb-container">
           {slice.items.map((item, idx) => (
             <div
               className="rich-text"

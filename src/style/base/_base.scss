@@ -15,6 +15,7 @@
 
 body {
   background-color: #1f2023;
+  overflow-x: hidden;
 }
 
 a,
@@ -37,6 +38,11 @@ ul {
   @include mq("md", max) {
     max-width: calc(100% - 40px);
   }
+}
+.container-small {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .social-icons {

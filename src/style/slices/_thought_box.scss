@@ -2,11 +2,19 @@
   margin-top: 24px;
   margin-bottom: 24px;
   .tb-show {
-    padding: 5px 15px;
-    margin-left: 8px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 15px;
     background: #6d712e;
-    border-radius: 100px;
+    border-radius: 10px;
     color: white;
     border: none;
+  }
+  .tb-container {
+    padding: 16px 10px;
+    border: 1px solid #6d712e;
+    border-top: none;
   }
 }

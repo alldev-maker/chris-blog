@@ -47,7 +47,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Merriweather\:400,700,900`, `Allerta Stencil\:400`],
+        fonts: [
+          `Merriweather\:400,700,900`,
+          `Allerta Stencil\:400`,
+          `Coustard\:400`,
+        ],
         display: "swap",
       },
     },

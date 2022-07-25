@@ -1,27 +1,62 @@
 .blog-search {
   margin: 40px 0;
-  @include mq("lg", max) {
-    padding: 20px 0;
+  @include mq("sm", max) {
+    margin: 20px 0;
+  }
+  .headline,
+  .headline2 {
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    color: #ffffff;
   }
   .headline {
-    font-weight: 700;
-    font-size: 2em;
-    @include mq("lg", max) {
+    margin-bottom: 40px;
+    @include mq(sm, max) {
+      font-family: "Merriweather";
       font-weight: 900;
-      font-size: 1.3em;
-      margin-bottom: 15px;
+      font-size: 20px;
+      line-height: 38px;
+      margin-bottom: 10px;
+    }
+  }
+  .headline2 {
+    @include mq("sm", max) {
+      font-family: "Merriweather";
+      font-weight: 900;
+      font-size: 16px;
+      line-height: 32px;
+    }
+  }
+  .category-label {
+    margin-top: 40px;
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100px;
+    color: #ffffff;
+    text-align: center;
+    @include mq(sm, max) {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-family: "Merriweather";
+      font-weight: 900;
+      font-size: 16px;
+      line-height: 28px;
     }
   }
   .search-input {
     width: 100%;
     margin: 32px 0;
-    padding: 10px 10px 10px 70px;
+    padding: 0 10px 0 70px;
     border-radius: 10px;
+    font-family: "Coustard";
     font-weight: 400;
-    font-size: 32px;
+    font-size: 16px;
     line-height: 42px;
     color: white;
-    background: url("../images/search-icon.svg") no-repeat scroll 22px 22px;
+    background: url("../images/search-icon.svg") no-repeat scroll 20px 10px;
     background-color: rgba(255, 255, 255, 0.05);
     border: none;
     &::placeholder {
@@ -41,37 +76,49 @@
   .category-list {
     display: flex;
     flex-wrap: wrap;
-
-    .view-all {
-      padding: 10px 15px;
-      margin: 0 10px 15px;
-      background: rgba(255, 255, 255, 0.05);
-      text-decoration: underline;
-      border-radius: 10px;
-      border: none;
-      font-weight: 400;
-      font-size: 18px;
-      letter-spacing: 0.02em;
-      color: white;
+  }
+  .view-all {
+    padding: 13px 9px;
+    margin: 0 10px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: none;
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: white;
+    @include mq(sm, max) {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 16px;
+      line-height: 24px;
     }
   }
 }
 
 .category-item {
   background-color: $green;
-  padding: 7px 10px;
+  padding: 9px 10px;
   margin: 0 10px 15px;
   display: flex;
   align-items: center;
   border-radius: 10px;
   border: none;
+  font-family: "Coustard";
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 14px;
   letter-spacing: 0.02em;
   color: white;
-  @include mq(lg, max) {
+  &.active {
+    background: #cfb53b;
+  }
+  @include mq(sm, max) {
     padding: 4px 10px;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 24px;
     border-radius: 5px;
     margin: 0 10px 20px;
   }
@@ -79,7 +126,7 @@
     margin-right: 10px;
     width: 32px;
     height: 32px;
-    @include mq(lg, max) {
+    @include mq(sm, max) {
       width: 16px;
       height: 16px;
     }
@@ -91,7 +138,7 @@
   border-top: 1px solid $green;
   border-bottom: 1px solid $green;
   .blog-item {
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     &:last-child {
       margin-bottom: 0;
     }

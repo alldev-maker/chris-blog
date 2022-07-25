@@ -4,6 +4,7 @@ import BlogItem from "../components/common/blog-item"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { Astronaut } from "../utils/imgImport"
 
 const IndexPage = ({ data }) => {
   const categoryList = data.allPrismicCategory.nodes
@@ -27,34 +28,43 @@ const IndexPage = ({ data }) => {
       <Seo title="Home" />
       <section className="container">
         <div className="blog-search">
-          <div className="summary">
-            <h1 className="headline">Hi I’m Chris Terrel Jones</h1>
+          <div className="summary text-center">
             <h1 className="headline">
+              Hey, I’m Chris. <img src={Astronaut} alt="astronaut" />
+            </h1>
+            <h1 className="headline2">
               I’m a <span className="green">Machine Learning Engineer.</span>
             </h1>
-            <h1 className="headline">I write post about...</h1>
           </div>
-          <input
-            className="search-input"
-            type="text"
-            placeholder="Search"
-            value={search}
-            onChange={handleSearchChange}
-          />
-          <div className="category-list">
-            {categoryList.map((item, idx) => (
-              <button
-                onClick={() => setFilter(item.prismicId)}
-                className="category-item"
-                key={idx}
-              >
-                <img src={item.data.icon.url} alt="category icon" />
-                {item.data.name}
+          <div className="container-small">
+            <p className="category-label">I write post about...</p>
+            <div className="category-list">
+              {categoryList.map((item, idx) => (
+                <button
+                  onClick={() => setFilter(item.prismicId)}
+                  className={`category-item ${
+                    item.prismicId === filter ? "active" : ""
+                  }`}
+                  key={idx}
+                >
+                  <img src={item.data.icon.url} alt="category icon" />
+                  {item.data.name}
+                </button>
+              ))}
+            </div>
+            <div className="text-center">
+              <button className="view-all" onClick={() => setFilter("")}>
+                view all
               </button>
-            ))}
-            <button className="view-all" onClick={() => setFilter("")}>
-              view all
-            </button>
+            </div>
+
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Search"
+              value={search}
+              onChange={handleSearchChange}
+            />
           </div>
         </div>
         <div className="blog-list">

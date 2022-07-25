@@ -6,6 +6,7 @@ import github from "../images/github-icon.svg"
 import calendar from "../images/calendar.svg"
 import clock from "../images/clock.svg"
 import thinkEmoji from "../images/think-emoji.svg"
+import astronaut from "../images/astronaut.png"
 
 import chrisImg from "../images/chris.jpg"
 
@@ -19,3 +20,5 @@ export const Clock = clock
 export const ThinkEmoji = thinkEmoji
 
 export const ChrisImg = chrisImg
+
+export const Astronaut = astronaut
