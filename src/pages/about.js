@@ -12,9 +12,9 @@ const AboutMe = ({ data }) => {
       <section className="container">
         <div className="about-me d-flex flex-wrap align-items-center justify-content-center">
           <img className="avatar" src={ChrisImg} alt="chris" />
-          <div>
+          <div className="text-center">
             <h1 className="name">Chris Terrel Jones</h1>
-            <p className="role">-{aboutData.data.job_title}</p>
+            <p className="role">{aboutData.data.job_title}</p>
             <SocialLinks />
           </div>
         </div>
@@ -22,7 +22,7 @@ const AboutMe = ({ data }) => {
           className="about-content"
           dangerouslySetInnerHTML={{ __html: aboutData.data.am_body.html }}
         />
-        <div className="faq-list my-4">
+        <div className="faq-list my-5">
           <h1>FAQs</h1>
           {aboutData.data.faq_list.map((item, idx) => (
             <Faq question={item.question} answer={item.answer} key={idx} />

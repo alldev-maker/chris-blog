@@ -4,7 +4,6 @@ import BlogItem from "../components/common/blog-item"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Astronaut } from "../utils/imgImport"
 
 const IndexPage = ({ data }) => {
   const categoryList = data.allPrismicCategory.nodes
@@ -29,9 +28,7 @@ const IndexPage = ({ data }) => {
       <section className="container">
         <div className="blog-search">
           <div className="summary text-center">
-            <h1 className="headline">
-              Hey, I’m Chris. <img src={Astronaut} alt="astronaut" />
-            </h1>
+            <h1 className="headline">Hey, I’m Chris.</h1>
             <h1 className="headline2">
               I’m a <span className="green">Machine Learning Engineer.</span>
             </h1>
@@ -41,7 +38,11 @@ const IndexPage = ({ data }) => {
             <div className="category-list">
               {categoryList.map((item, idx) => (
                 <button
-                  onClick={() => setFilter(item.prismicId)}
+                  onClick={() =>
+                    item.prismicId === filter
+                      ? setFilter("")
+                      : setFilter(item.prismicId)
+                  }
                   className={`category-item ${
                     item.prismicId === filter ? "active" : ""
                   }`}

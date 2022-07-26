@@ -1,9 +1,12 @@
 footer {
-  h2 {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  .name {
     font-weight: 900;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
     letter-spacing: 0.02em;
+    border-top: 1px solid #6d712e;
+    padding-top: 20px;
   }
   .social-icons {
     justify-content: center;

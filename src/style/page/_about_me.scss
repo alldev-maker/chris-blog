@@ -14,10 +14,20 @@
   }
   .name {
     font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
   }
   .role {
     color: #848484;
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 38px;
+    margin-top: 20px;
     margin-bottom: 16px;
+  }
+  .social-icons {
+    justify-content: center;
   }
   @include mq("md", max) {
     margin-top: 20px;
@@ -30,5 +40,17 @@
   }
   p {
     margin-bottom: 8px;
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0.02em;
+  }
+}
+.faq-list {
+  h1 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 80px;
   }
 }
