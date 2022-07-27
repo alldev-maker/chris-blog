@@ -17,74 +17,70 @@ import BlogTimeInfo from "../components/common/blog-time-info"
 import { components } from "../components/slices"
 
 const BlotPost = ({ data }) => {
-  const isBrowser = () => typeof window !== "undefined"
-  if (!isBrowser) {
-    return
-  }
-
   const blogData = data.prismicBlogPost.data
   const categoryData = data.allPrismicCategory.nodes
   const getCategoryData = categoryId => {
     return categoryData.filter(item => item.prismicId === categoryId)[0].data
   }
 
-  return (
-    <Layout>
-      <section className="container blog-detail">
-        <h1 className="title">{blogData.blog_title}</h1>
-        <div className="d-flex justify-content-between my-5">
-          <BlogTimeInfo
-            date={blogData.published_date}
-            readingTime={blogData.reading_time}
+  if (typeof window !== "undefined")
+    return (
+      <Layout>
+        <section className="container blog-detail">
+          <h1 className="title">{blogData.blog_title}</h1>
+          <div className="d-flex justify-content-between my-5">
+            <BlogTimeInfo
+              date={blogData.published_date}
+              readingTime={blogData.reading_time}
+            />
+          </div>
+          <div
+            className="rich-text blog-content"
+            dangerouslySetInnerHTML={{ __html: blogData.blog_description.html }}
           />
-        </div>
-        <div
-          className="rich-text blog-content"
-          dangerouslySetInnerHTML={{ __html: blogData.blog_description.html }}
-        />
-        <SliceZone slices={blogData.body} components={components} />
-        <h3 className="tags-label">Tags</h3>
-        <div className="d-flex justify-content-center flex-wrap">
-          {blogData.categories.map((item, idx) => (
-            <div className="category-item" key={idx}>
-              <img
-                src={getCategoryData(item.category.id).icon.url}
-                alt={getCategoryData(item.category.id).name}
-              />
-              {getCategoryData(item.category.id).name}
-            </div>
-          ))}
-        </div>
-        <h3 className="tags-label mt-4">Share</h3>
-        <div className="d-flex align-items-center justify-content-center gap-3">
-          <FacebookShareButton
-            url={window.location.href}
-            title={blogData.blog_title}
-          >
-            <FacebookIcon size={32} round={true} />
-          </FacebookShareButton>
-          <TwitterShareButton
-            url={window.location.href}
-            title={blogData.blog_title}
-          >
-            <TwitterIcon size={32} round={true} />
-          </TwitterShareButton>
-          <LinkedinShareButton
-            url={window.location.href}
-            title={blogData.blog_title}
-          >
-            <LinkedinIcon size={32} round={true} />
-          </LinkedinShareButton>
-          <EmailShareButton
-            url={window.location.href}
-            title={blogData.blog_title}
-          >
-            <EmailIcon size={32} round={true} />
-          </EmailShareButton>
-        </div>
-      </section>
-    </Layout>
-  )
+          <SliceZone slices={blogData.body} components={components} />
+          <h3 className="tags-label">Tags</h3>
+          <div className="d-flex justify-content-center flex-wrap">
+            {blogData.categories.map((item, idx) => (
+              <div className="category-item" key={idx}>
+                <img
+                  src={getCategoryData(item.category.id).icon.url}
+                  alt={getCategoryData(item.category.id).name}
+                />
+                {getCategoryData(item.category.id).name}
+              </div>
+            ))}
+          </div>
+          <h3 className="tags-label mt-4">Share</h3>
+          <div className="d-flex align-items-center justify-content-center gap-3">
+            <FacebookShareButton
+              url={window.location.href}
+              title={blogData.blog_title}
+            >
+              <FacebookIcon size={32} round={true} />
+            </FacebookShareButton>
+            <TwitterShareButton
+              url={window.location.href}
+              title={blogData.blog_title}
+            >
+              <TwitterIcon size={32} round={true} />
+            </TwitterShareButton>
+            <LinkedinShareButton
+              url={window.location.href}
+              title={blogData.blog_title}
+            >
+              <LinkedinIcon size={32} round={true} />
+            </LinkedinShareButton>
+            <EmailShareButton
+              url={window.location.href}
+              title={blogData.blog_title}
+            >
+              <EmailIcon size={32} round={true} />
+            </EmailShareButton>
+          </div>
+        </section>
+      </Layout>
+    )
 }
 
 export default BlotPost
