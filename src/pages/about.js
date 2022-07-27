@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import Layout from "../components/layout"
-import { ChrisImg } from "../utils/imgImport"
 import SocialLinks from "../components/common/social-links"
 import Faq from "../components/common/faq"
 
@@ -12,7 +13,12 @@ const AboutMe = ({ data }) => {
       <section className="container">
         <div className="about-me row align-items-center justify-content-center">
           <div className="col-lg-7 text-center">
-            <img className="avatar" src={ChrisImg} alt="chris" />
+            {/* <img src={ChrisImg} alt="chris" /> */}
+            <GatsbyImage
+              className="avatar"
+              image={getImage(aboutData.data.profile_picture)}
+              alt="chris"
+            />
           </div>
           <div className="col-lg-5 text-center">
             <h1 className="name">Chris Terrel Jones</h1>
@@ -49,6 +55,9 @@ export const pageQuery = graphql`
           faq_list {
             answer
             question
+          }
+          profile_picture {
+            gatsbyImageData
           }
         }
       }
