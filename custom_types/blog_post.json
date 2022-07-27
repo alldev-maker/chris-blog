@@ -163,35 +163,12 @@
             "description": "Embedding for Website",
             "icon": "subway",
             "display": "list",
-            "non-repeat": {
-              "youtube_videos": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                  "label": "Youtube Videos"
-                }
-              },
-              "spotify_videos": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                  "label": "Spotify Videos"
-                }
-              },
-              "twitter_posts": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                  "label": "Twitter Posts"
-                }
-              }
-            },
+            "non-repeat": {},
             "repeat": {
-              "embedded_links": {
-                "type": "Embed",
+              "embedding": {
+                "type": "Text",
                 "config": {
-                  "label": "Embedded Links",
-                  "placeholder": "Embedded Links"
+                  "label": "embedding"
                 }
               }
             }

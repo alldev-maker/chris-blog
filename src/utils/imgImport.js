@@ -8,7 +8,7 @@ import clock from "../images/clock.svg"
 import thinkEmoji from "../images/think-emoji.svg"
 import astronaut from "../images/astronaut.png"
 
-import chrisImg from "../images/chris.jpg"
+import chrisImg from "../images/chris.png"
 
 export const Linkedin = linkedin
 export const Twitter = twitter

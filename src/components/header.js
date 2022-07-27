@@ -1,22 +1,33 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 
 const Header = () => {
-  const navs = [
-    {
-      name: "Home",
-      to: "/",
-    },
-    {
-      name: "About",
-      to: "/about",
-    },
-    {
-      name: "Buy Me Coffee",
-      to: "/",
-    },
-  ]
-
+  const { allPrismicLogo, allPrismicNavBar } = useStaticQuery(
+    graphql`
+      query {
+        allPrismicLogo {
+          nodes {
+            data {
+              logo {
+                url
+              }
+            }
+          }
+        }
+        allPrismicNavBar {
+          nodes {
+            data {
+              links {
+                link
+                link_title
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+  const navs = allPrismicNavBar.nodes[0].data.links
   const [hambugerActive, setHambugerActiveState] = useState(false)
 
   const hamburgerHandler = () => {
@@ -36,14 +47,14 @@ const Header = () => {
       <div className="container">
         <nav className="navbar">
           <Link className="logo" to="/">
-            Logo
+            <img src={allPrismicLogo.nodes[0].data.logo.url} alt="logo" />
           </Link>
           <ul className={navMenuClsName}>
             {navs.map((item, idx) => (
               <li className="nav-item" key={idx}>
-                <Link className="nav-link" key={idx} to={item.to}>
-                  {item.name}
-                </Link>
+                <a className="nav-link" key={idx} href={item.link}>
+                  {item.link_title}
+                </a>
               </li>
             ))}
           </ul>

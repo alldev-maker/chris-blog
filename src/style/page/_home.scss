@@ -139,6 +139,16 @@
   border-bottom: 1px solid $green;
   .blog-item {
     margin-bottom: 40px;
+    .title {
+      font-family: "Merriweather";
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 48px;
+      @include mq(lg, max) {
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -154,6 +164,10 @@
       margin-top: 15px;
       margin-bottom: 15px;
       color: #848484;
+      font-family: "Coustard";
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
     }
 
     @include mq(lg, max) {

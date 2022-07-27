@@ -4,7 +4,6 @@ import Highlight from "react-highlight"
 import "highlight.js/styles/rainbow.css"
 
 export const CodeSlice = ({ slice }) => {
-  console.log("code slice:", slice)
   return (
     <>
       {slice.items.map((item, idx) => (

@@ -1,0 +1,26 @@
+{
+  "Main": {
+    "links": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link_title": {
+            "type": "Text",
+            "config": {
+              "label": "Link Title",
+              "placeholder": "Link Title"
+            }
+          },
+          "link": {
+            "type": "Text",
+            "config": {
+              "label": "Link",
+              "placeholder": "Link"
+            }
+          }
+        },
+        "label": "Links"
+      }
+    }
+  }
+}

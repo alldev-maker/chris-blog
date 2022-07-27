@@ -3,28 +3,24 @@ import { graphql } from "gatsby"
 
 export const Video = ({ slice }) => {
   console.log("video slice:", slice)
+  console.log("video slice here!!!")
   return (
     <div className="post-video">
-      Video Slice
-      {/* <div
-        dangerouslySetInnerHTML={{ __html: slice.primary.spotify_videos.html }}
-      /> */}
+      {slice.items.map((item, idx) => (
+        <div
+          className="video-slice"
+          key={idx}
+          dangerouslySetInnerHTML={{ __html: item.embedding }}
+        />
+      ))}
     </div>
   )
 }
 
 export const query = graphql`
   fragment BlogPostDataBodyVideo on PrismicBlogPostDataBodyVideo {
-    primary {
-      spotify_videos {
-        html
-      }
-      twitter_posts {
-        html
-      }
-      youtube_videos {
-        html
-      }
+    items {
+      embedding
     }
   }
 `

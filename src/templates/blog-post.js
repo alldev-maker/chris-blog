@@ -23,7 +23,6 @@ const BlotPost = ({ data }) => {
     return categoryData.filter(item => item.prismicId === categoryId)[0].data
   }
 
-  console.log(categoryData)
   return (
     <Layout>
       <section className="container blog-detail">
@@ -147,16 +146,8 @@ export const pageQuery = graphql`
           }
           ... on PrismicBlogPostDataBodyVideo {
             id
-            primary {
-              spotify_videos {
-                html
-              }
-              twitter_posts {
-                html
-              }
-              youtube_videos {
-                html
-              }
+            items {
+              embedding
             }
           }
           ... on PrismicBlogPostDataBodyCodeSlice {

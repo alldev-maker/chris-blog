@@ -4,6 +4,9 @@
   transition: all 0.3s ease;
   background: #6d712e;
   border-radius: 20px;
+  @include mq(sm, max) {
+    border-radius: 10px;
+  }
   &.active {
     .accordion__toggler {
       border-bottom: 1px solid white;
@@ -16,18 +19,23 @@
     }
     .accordion__content {
       max-height: 500px;
-      margin-top: 8px;
+      margin-top: 20px;
     }
   }
 
   .accordion__toggler {
-    font-size: 16px;
     text-align: left;
     background: #6d712e;
     border: none;
     color: white;
-    font-size: 20px;
+
     font-weight: 700;
+    font-size: 24px;
+    line-height: 48px;
+    @include mq(sm, max) {
+      font-size: 20px;
+      line-height: 28px;
+    }
     .sign {
       position: relative;
       &::after {
@@ -45,8 +53,15 @@
 
   .accordion__content {
     max-height: 0px;
-    font-size: 18px;
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 38px;
     overflow: hidden;
     color: white;
+    @include mq(sm, max) {
+      line-height: 22px;
+      letter-spacing: 0.02em;
+    }
   }
 }

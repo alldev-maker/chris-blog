@@ -6,11 +6,15 @@ const Footer = () => (
     <div className="container">
       <h1 className="name">Chris Terrel Jones</h1>
       <SocialLinks />
-      <p className="my-5 pb-3 text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit sed nibh
-        lectus sed nunc natoque faucibus eget. Arcu et varius feugiat imperdiet
-        consequat, et tempus. Mi urna, purus nisi gravida tincidunt proin
-        hendrerit tellus.
+      <p className="my-4 pb-3 footer-text">
+        Mauris erat odio, tempor dignissim porta at, rutrum eu nibh. Ut ac
+        aliquet eros. Etiam porta purus augue, a venenatis ex facilisis at.
+        Vivamus ullamcorper ut nibh vitae auctor. Etiam vitae augue nec leo
+        scelerisque tristique. Maecenas tincidunt id urna et vulputate.
+        Phasellus imperdiet eleifend urna eget iaculis. Morbi aliquet lorem
+        enim, ac aliquet nibh consectetur nec. Nullam nec tellus non purus
+        egestas dignissim. Ut non erat auctor, commodo risus a, suscipit enim.
+        Curabitur porttitor rhoncus neque.
       </p>
     </div>
     <div className="bottom-bar">

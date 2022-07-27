@@ -25,7 +25,11 @@ const SocialLinks = () => {
     <div className="social-icons">
       {allPrismicSocialMedia.nodes.map((item, idx) => (
         <a href={item.data.link.url} className="social-link" key={idx}>
-          <img src={item.data.image.url} alt={item.data.name} />
+          <img
+            className="social-icon"
+            src={item.data.image.url}
+            alt={item.data.name}
+          />
         </a>
       ))}
     </div>

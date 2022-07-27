@@ -1,12 +1,17 @@
 footer {
   .name {
+    padding-top: 20px;
+    margin-bottom: 30px;
     font-weight: 900;
     font-size: 40px;
     line-height: 80px;
     text-align: center;
     letter-spacing: 0.02em;
     border-top: 1px solid #6d712e;
-    padding-top: 20px;
+    @include mq(sm, max) {
+      font-size: 24px;
+      line-height: 30px;
+    }
   }
   .social-icons {
     justify-content: center;
@@ -16,10 +21,27 @@ footer {
       @include mq("sm", max) {
         padding: 0 15px;
         .social-icon {
-          width: 14px;
-          height: 14px;
+          width: 20px;
+          height: 20px;
         }
       }
+    }
+  }
+  .footer-text {
+    max-width: 886px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Merriweather";
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    @include mq(sm, max) {
+      font-family: "Coustard";
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
     }
   }
   .bottom-bar {

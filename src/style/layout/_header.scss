@@ -12,7 +12,15 @@ header {
     font-weight: 400;
     font-size: 60px;
     color: #ffffff;
-    border-bottom: 4px dashed #6d712e;
+    // border-bottom: 4px dashed #6d712e;
+    img {
+      width: 70px;
+      height: 70px;
+      @include mq(sm, max) {
+        width: 50px;
+        height: 50px;
+      }
+    }
     @include mq("sm", max) {
       max-width: 213px;
       font-size: 40px;
@@ -52,7 +60,7 @@ header {
           height: calc(100vh - 79px);
           padding-top: 40px;
           padding-bottom: 32px;
-          margin-left: -32px;
+          margin-left: -20px;
           background: #1f2023;
           flex-direction: column;
           z-index: 99;
@@ -61,6 +69,7 @@ header {
           overflow-y: hidden;
           .nav-item {
             width: calc(100% - 32px);
+            text-align: center;
             .nav-link {
               font-weight: 300;
               font-size: 24px;

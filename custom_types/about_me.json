@@ -7,6 +7,14 @@
         "placeholder": "Job Title"
       }
     },
+    "profile_picture": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Profile Picture"
+      }
+    },
     "am_body": {
       "type": "StructuredText",
       "config": {

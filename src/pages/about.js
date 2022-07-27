@@ -10,9 +10,11 @@ const AboutMe = ({ data }) => {
   return (
     <Layout>
       <section className="container">
-        <div className="about-me d-flex flex-wrap align-items-center justify-content-center">
-          <img className="avatar" src={ChrisImg} alt="chris" />
-          <div className="text-center">
+        <div className="about-me row align-items-center justify-content-center">
+          <div className="col-lg-7 text-center">
+            <img className="avatar" src={ChrisImg} alt="chris" />
+          </div>
+          <div className="col-lg-5 text-center">
             <h1 className="name">Chris Terrel Jones</h1>
             <p className="role">{aboutData.data.job_title}</p>
             <SocialLinks />
