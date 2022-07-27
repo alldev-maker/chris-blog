@@ -6,7 +6,6 @@ const BlogItem = ({ blog, categoryList }) => {
   const getCategoryData = categoryId => {
     return categoryList.filter(item => item.prismicId === categoryId)[0].data
   }
-
   return (
     <div className="blog-item">
       <Link to={blog.url}>

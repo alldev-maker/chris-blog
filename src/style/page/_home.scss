@@ -55,12 +55,12 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 42px;
-    color: white;
+    color: #848484;
     background: url("../images/search-icon.svg") no-repeat scroll 20px 10px;
     background-color: rgba(255, 255, 255, 0.05);
     border: none;
     &::placeholder {
-      color: white;
+      color: #848484;
     }
     @include mq("lg", max) {
       border-radius: 5px;
@@ -144,6 +144,7 @@
       font-weight: 700;
       font-size: 32px;
       line-height: 48px;
+      text-transform: capitalize;
       @include mq(lg, max) {
         font-size: 20px;
         line-height: 28px;

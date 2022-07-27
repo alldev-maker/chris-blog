@@ -16,6 +16,20 @@
       line-height: 38px;
     }
   }
+  .blog-content {
+    margin-bottom: 70px;
+    p {
+      font-family: "Coustard";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 50px;
+      @include mq(sm, max) {
+        font-size: 16px;
+        line-height: 25px;
+      }
+    }
+  }
 }
 
 .tags-label {

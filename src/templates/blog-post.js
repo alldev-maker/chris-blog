@@ -57,25 +57,25 @@ const BlotPost = ({ data }) => {
               url={window.location.href}
               title={blogData.blog_title}
             >
-              <FacebookIcon size={32} round={true} />
+              <FacebookIcon size={45} round={true} />
             </FacebookShareButton>
             <TwitterShareButton
               url={window.location.href}
               title={blogData.blog_title}
             >
-              <TwitterIcon size={32} round={true} />
+              <TwitterIcon size={45} round={true} />
             </TwitterShareButton>
             <LinkedinShareButton
               url={window.location.href}
               title={blogData.blog_title}
             >
-              <LinkedinIcon size={32} round={true} />
+              <LinkedinIcon size={45} round={true} />
             </LinkedinShareButton>
             <EmailShareButton
               url={window.location.href}
               title={blogData.blog_title}
             >
-              <EmailIcon size={32} round={true} />
+              <EmailIcon size={45} round={true} />
             </EmailShareButton>
           </div>
         </section>

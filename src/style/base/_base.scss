@@ -65,9 +65,19 @@ ul {
   h2,
   h3,
   h4,
-  h5,
+  h5 {
+    margin-bottom: 22px;
+  }
   p {
-    margin-bottom: 8px;
+    margin-bottom: 40px;
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    @include mq(sm, max) {
+      font-size: 16px;
+      line-height: 25px;
+    }
   }
   img {
     max-width: 100%;
@@ -77,8 +87,16 @@ ul {
     margin-bottom: 16px;
     list-style: none;
     li {
-      margin-bottom: 8px;
+      margin-bottom: 25px;
+      font-family: "Coustard";
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 40px;
       color: white;
+      @include mq(sm, max) {
+        font-size: 16px;
+        line-height: 25px;
+      }
     }
     li::before {
       content: "\2022";

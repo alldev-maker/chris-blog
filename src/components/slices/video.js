@@ -6,7 +6,7 @@ export const Video = ({ slice }) => {
     <div className="post-video">
       {slice.items.map((item, idx) => (
         <div
-          className="video-slice"
+          className="video-slice my-5"
           key={idx}
           dangerouslySetInnerHTML={{ __html: item.embedding }}
         />
