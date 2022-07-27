@@ -17,6 +17,11 @@ import BlogTimeInfo from "../components/common/blog-time-info"
 import { components } from "../components/slices"
 
 const BlotPost = ({ data }) => {
+  const isBrowser = () => typeof window !== "undefined"
+  if (!isBrowser) {
+    return
+  }
+
   const blogData = data.prismicBlogPost.data
   const categoryData = data.allPrismicCategory.nodes
   const getCategoryData = categoryId => {
