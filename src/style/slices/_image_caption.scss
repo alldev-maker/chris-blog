@@ -1,0 +1,17 @@
+.post-image {
+  position: relative;
+
+  margin-bottom: 3rem;
+
+  .image-label {
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 68px;
+    color: white;
+    text-align: center;
+    @include mq(sm, max) {
+      font-size: 12px;
+    }
+  }
+}

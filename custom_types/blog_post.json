@@ -98,18 +98,16 @@
             "display": "list",
             "non-repeat": {
               "quote": {
-                "type": "StructuredText",
+                "type": "Text",
                 "config": {
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                  "label": "quote",
-                  "placeholder": "quote"
+                  "label": "quote"
                 }
               },
               "quoted_by": {
-                "type": "StructuredText",
+                "type": "Text",
                 "config": {
-                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                  "label": "Quoted By"
+                  "label": "Quoted By",
+                  "placeholder": "Quoted By"
                 }
               }
             },
@@ -185,6 +183,31 @@
                 "config": {
                   "label": "Sub Title",
                   "placeholder": "Sub Title"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "image_caption": {
+            "type": "Slice",
+            "fieldset": "Image Caption",
+            "description": "Image Caption",
+            "icon": "insert_photo",
+            "display": "list",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "caption": {
+                "type": "Text",
+                "config": {
+                  "label": "Caption",
+                  "placeholder": "Caption"
                 }
               }
             },

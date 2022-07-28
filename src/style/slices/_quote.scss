@@ -1,20 +1,58 @@
 .post-quote {
+  position: relative;
   margin-top: 70px;
   margin-bottom: 70px;
-
+  border-top: 10px solid $green;
+  border-bottom: 10px solid $green;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @include mq(sm, max) {
+    max-width: 300px;
+    border-width: 7px;
+  }
   .quote-text {
-    p {
-      max-width: 840px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      font-family: "Coustard";
-      font-weight: 400;
-      font-size: 32px;
-      text-align: center;
-      border-top: 5px solid $green;
-      border-bottom: 5px solid $green;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 0;
+    @include mq(sm, max) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  .quote-author {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: "Coustard";
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 8px;
+    @include mq(sm, max) {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 4px;
+      top: 50%;
+      left: -35px;
+      background: #848484;
+      transform: translateY(-50%);
+      @include mq(sm, max) {
+        width: 9px;
+        height: 3px;
+        left: -15px;
+      }
     }
   }
 }

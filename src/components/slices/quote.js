@@ -4,10 +4,8 @@ import { graphql } from "gatsby"
 export const Quote = ({ slice }) => {
   return (
     <div className="post-quote">
-      <div
-        className="rich-text quote-text"
-        dangerouslySetInnerHTML={{ __html: slice.primary.quote.html }}
-      />
+      <p className="quote-text">{slice.primary.quote}</p>
+      <p className="quote-author">{slice.primary.quoted_by}</p>
     </div>
   )
 }
@@ -15,12 +13,8 @@ export const Quote = ({ slice }) => {
 export const query = graphql`
   fragment BlogPostDataBodyQuote on PrismicBlogPostDataBodyQuote {
     primary {
-      quote {
-        html
-      }
-      quoted_by {
-        html
-      }
+      quote
+      quoted_by
     }
   }
 `

@@ -1,4 +1,5 @@
 import { CodeSlice } from "./code-slice"
+import { ImageCaption } from "./image-caption"
 import { Quote } from "./quote"
 import { SubContext } from "./sub-context"
 import { SubHeading } from "./sub-heading"
@@ -12,4 +13,5 @@ export const components = {
   thought_box: ThoughtBox,
   code_slice: CodeSlice,
   video: Video,
+  image_caption: ImageCaption,
 }

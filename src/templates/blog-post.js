@@ -57,25 +57,25 @@ const BlotPost = ({ data }) => {
               url={window.location.href}
               title={blogData.blog_title}
             >
-              <FacebookIcon size={45} round={true} />
+              <FacebookIcon size={60} round={true} />
             </FacebookShareButton>
             <TwitterShareButton
               url={window.location.href}
               title={blogData.blog_title}
             >
-              <TwitterIcon size={45} round={true} />
+              <TwitterIcon size={60} round={true} />
             </TwitterShareButton>
             <LinkedinShareButton
               url={window.location.href}
               title={blogData.blog_title}
             >
-              <LinkedinIcon size={45} round={true} />
+              <LinkedinIcon size={60} round={true} />
             </LinkedinShareButton>
             <EmailShareButton
               url={window.location.href}
               title={blogData.blog_title}
             >
-              <EmailIcon size={45} round={true} />
+              <EmailIcon size={60} round={true} />
             </EmailShareButton>
           </div>
         </section>
@@ -109,12 +109,8 @@ export const pageQuery = graphql`
           ... on PrismicBlogPostDataBodyQuote {
             id
             primary {
-              quote {
-                html
-              }
-              quoted_by {
-                html
-              }
+              quote
+              quoted_by
             }
           }
           ... on PrismicBlogPostDataBodySubHeading {
@@ -160,6 +156,16 @@ export const pageQuery = graphql`
               code_explanation {
                 html
               }
+            }
+          }
+          ... on PrismicBlogPostDataBodyImageCaption {
+            id
+            primary {
+              image {
+                alt
+                url
+              }
+              caption
             }
           }
         }

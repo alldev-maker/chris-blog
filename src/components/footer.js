@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import SocialLinks from "./common/social-links"
 
 const Footer = () => {
-  const { allPrismicFooter } = useStaticQuery(graphql`
+  const { allPrismicFooter, allPrismicAboutMe } = useStaticQuery(graphql`
     query {
       allPrismicFooter {
         nodes {
@@ -14,12 +14,19 @@ const Footer = () => {
           }
         }
       }
+      allPrismicAboutMe {
+        nodes {
+          data {
+            my_name
+          }
+        }
+      }
     }
   `)
   return (
     <footer>
       <div className="container">
-        <h1 className="name">Chris Terrel Jones</h1>
+        <h1 className="name">{allPrismicAboutMe.nodes[0].data.my_name}</h1>
         <SocialLinks />
         <div
           className="my-4 pb-3 footer-text"

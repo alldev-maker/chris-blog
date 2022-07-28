@@ -1,5 +1,12 @@
 {
   "Main": {
+    "my_name": {
+      "type": "Text",
+      "config": {
+        "label": "My Name",
+        "placeholder": "My Name"
+      }
+    },
     "job_title": {
       "type": "Text",
       "config": {

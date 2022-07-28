@@ -21,7 +21,7 @@ const AboutMe = ({ data }) => {
             />
           </div>
           <div className="col-lg-5 text-center">
-            <h1 className="name">Chris Terrel Jones</h1>
+            <h1 className="name">{aboutData.data.my_name}</h1>
             <p className="role">{aboutData.data.job_title}</p>
             <SocialLinks />
           </div>
@@ -48,6 +48,7 @@ export const pageQuery = graphql`
     allPrismicAboutMe {
       nodes {
         data {
+          my_name
           job_title
           am_body {
             html
