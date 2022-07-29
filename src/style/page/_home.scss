@@ -1,7 +1,7 @@
 .blog-search {
-  margin: 40px 0;
+  margin: 100px 0;
   @include mq("sm", max) {
-    margin: 20px 0;
+    margin: 50px 0;
   }
   .headline,
   .headline2 {
@@ -12,7 +12,7 @@
     color: #ffffff;
   }
   .headline {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     @include mq(sm, max) {
       font-family: "Merriweather";
       font-weight: 900;
@@ -30,7 +30,7 @@
     }
   }
   .category-label {
-    margin-top: 40px;
+    margin-top: 60px;
     font-family: "Coustard";
     font-weight: 400;
     font-size: 24px;

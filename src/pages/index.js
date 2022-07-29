@@ -8,6 +8,7 @@ import Seo from "../components/seo"
 const IndexPage = ({ data }) => {
   const categoryList = data.allPrismicCategory.nodes
   const blogList = data.allPrismicBlogPost.nodes
+  const introData = data.allPrismicHomePage.nodes[0].data
 
   const [search, setSearch] = useState("")
   const [filter, setFilter] = useState("")
@@ -28,13 +29,13 @@ const IndexPage = ({ data }) => {
       <section className="container">
         <div className="blog-search">
           <div className="summary text-center">
-            <h1 className="headline">Hey, I’m Chris.</h1>
+            <h1 className="headline">{introData.intro_name}</h1>
             <h1 className="headline2">
-              I’m a <span className="green">Machine Learning Engineer.</span>
+              I’m a <span className="green">{introData.intro_role}</span>
             </h1>
           </div>
           <div className="container-small">
-            <p className="category-label">I write post about...</p>
+            <p className="category-label">{introData.intro_about}</p>
             <div className="category-list">
               {categoryList.map((item, idx) => (
                 <button
@@ -85,6 +86,15 @@ export default IndexPage
 
 export const homepageQuery = graphql`
   query homeQuery {
+    allPrismicHomePage {
+      nodes {
+        data {
+          intro_name
+          intro_role
+          intro_about
+        }
+      }
+    }
     allPrismicBlogPost {
       nodes {
         data {

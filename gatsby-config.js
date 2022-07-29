@@ -70,6 +70,7 @@ module.exports = {
           logo: require("./custom_types/logo.json"),
           nav_bar: require("./custom_types/nav_bar.json"),
           footer: require("./custom_types/footer.json"),
+          home_page: require("./custom_types/home_page.json"),
         },
       },
     },

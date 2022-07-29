@@ -1,3 +1,6 @@
-.video-slice > iframe {
-  max-width: 100%;
+.video-slice {
+  text-align: center;
+  & > iframe {
+    max-width: 100%;
+  }
 }
