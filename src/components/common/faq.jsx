@@ -10,11 +10,14 @@ const Faq = ({ question, answer }) => {
         className="accordion__toggler w-100 d-flex justify-content-between font-weight--700"
         onClick={() => setActive(!active)}
       >
-        <span>{question}</span>
+        <span className="accordion__question">{question}</span>
         <span className="sign" />
       </button>
 
-      <div className="accordion__content">{answer}</div>
+      <div
+        className="accordion__content"
+        dangerouslySetInnerHTML={{ __html: answer.html }}
+      />
     </div>
   )
 }

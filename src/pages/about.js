@@ -54,8 +54,10 @@ export const pageQuery = graphql`
             html
           }
           faq_list {
-            answer
             question
+            answer {
+              html
+            }
           }
           profile_picture {
             gatsbyImageData

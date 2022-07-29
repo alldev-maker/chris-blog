@@ -18,7 +18,7 @@
       }
     }
     .accordion__content {
-      max-height: 500px;
+      max-height: 100%;
       margin-top: 20px;
     }
   }
@@ -36,32 +36,48 @@
       font-size: 20px;
       line-height: 28px;
     }
+    .accordion__question {
+      @include mq(sm, max) {
+        padding-right: 25px;
+      }
+    }
     .sign {
       position: relative;
       &::after {
         position: absolute;
         content: "";
-        top: 10px;
+        top: 20px;
         right: 10px;
         width: 21px;
         height: 12px;
         background: url("../images/dropdown.svg") no-repeat center;
         transition: transform 0.3s ease-in-out;
+        @include mq(sm, max) {
+          top: 10px;
+          width: 14px;
+          height: 8px;
+          background: url("../images/Vector.svg") no-repeat center;
+        }
       }
     }
   }
 
   .accordion__content {
     max-height: 0px;
-    font-family: "Coustard";
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 38px;
     overflow: hidden;
-    color: white;
-    @include mq(sm, max) {
-      line-height: 22px;
-      letter-spacing: 0.02em;
+    p {
+      font-family: "Coustard";
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 38px;
+      color: white;
+      @include mq(sm, max) {
+        line-height: 22px;
+        letter-spacing: 0.02em;
+      }
+    }
+    img {
+      width: 100%;
     }
   }
 }
