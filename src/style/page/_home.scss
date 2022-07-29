@@ -22,6 +22,9 @@
     }
   }
   .headline2 {
+    .green {
+      padding: 10px;
+    }
     @include mq("sm", max) {
       font-family: "Merriweather";
       font-weight: 900;
